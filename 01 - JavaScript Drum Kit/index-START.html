@@ -58,7 +58,13 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+  window.addEventListener('keydown', function(e) {
+     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+     if (!audio) return; // loop code if there is no audio on keydown action 
+     audio.currentTime = 0 // plays audio whenever keyCode a is detected
+     audio.play();
+    //  console.log(audio);
+  });
 </script>
 
 
