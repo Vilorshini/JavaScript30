@@ -65,13 +65,19 @@
      audio.currentTime = 0 // plays audio whenever keyCode a is detected
      audio.play();
      key.classList.add('playing');
-
-
-     
      //key.classList.remove('playing');
      //key.classList.toggle('playing');
     //console.log(key);
   });
+
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+  // remove transition effect after each event
+  const keys = document.querySelectorAll('.key'); //gives array of every evelemnt that is matched
+  // when you have ann array of elements you cant listen to all of them, you have to loop over the element and attach an event listener
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 </script>
 
 
