@@ -9,12 +9,13 @@ window.addEventListener('keydown', function(e) {
     //key.classList.toggle('playing');
    //console.log(key);
  });
- // or
+
+ // or create a function for playsound ^
  // function playsound(e) {
  //  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
  //   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
- //   if (!audio) return; // loop code if there is no audio on keydown action 
- //   audio.currentTime = 0 // plays audio whenever keyCode a is detected
+ //   if (!audio) return;
+ //   audio.currentTime = 0
  //   audio.play();
  //   key.classList.add('playing');
  //}
@@ -22,7 +23,7 @@ window.addEventListener('keydown', function(e) {
  //window.addEventListener('keydown', playSound);
 
 
- function removeTransition(e) {
+function removeTransition(e) {
    if (e.propertyName !== 'transform') return;
    e.target.classList.remove('playing');
  }
